@@ -1,24 +1,35 @@
+import { StyleSheet } from 'react-native';
 import {
-	DarkTheme,
 	DefaultTheme,
+	DarkTheme,
 	ThemeProvider,
 } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import { useFonts } from 'expo-font';
+import { Slot, Tabs } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import * as SplashScreen from 'expo-splash-screen';
+import Toast from 'react-native-toast-message';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { ColorScheme, useColorScheme } from '@/hooks/useColorScheme.web';
+import { UserProvider } from '@/contexts/user';
+import { NavigationHistoryProvider } from '@/contexts/navigationHistory';
+import { RouteGuardProvider } from '@/contexts/routeGuard';
+import Text from '@/components/ui/Text';
+import { Colors } from '@/constants/Colors';
+import { HapticTab } from '@/components/HapticTab';
+import { Screens } from '@/constants/Screens';
+import Button from '@/components/ui/Button';
+import Icon from '@/components/ui/Icons';
+import { Design } from '@/constants/Design';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-	const colorScheme = useColorScheme();
 	const [loaded] = useFonts({
-		SpaceMono: require('../assets/fonts/NotoSans.ttf'),
+		NotoSans: require('../assets/fonts/NotoSans.ttf'),
 	});
 
 	useEffect(() => {
@@ -31,14 +42,16 @@ export default function RootLayout() {
 		return null;
 	}
 
-	return (
-		// <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-		<ThemeProvider value={DefaultTheme}>
-			<Stack>
-				<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-				<Stack.Screen name="+not-found" />
-			</Stack>
-			<StatusBar style="auto" />
-		</ThemeProvider>
-	);
+	return <Slot />;
 }
+
+const styles = (_scheme: ColorScheme) => ({
+	tabBarButton: StyleSheet.create({
+		common: {
+			display: 'flex',
+			flexDirection: 'column',
+			justifyContent: 'center',
+			alignItems: 'center',
+		},
+	}),
+});

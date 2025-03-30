@@ -1,2 +1,2 @@
-# vacation-manager
-A simple app for an easy vacation management among employers and employees.
+# Leave manager
+A simple app for an easy leave management among employers and employees.

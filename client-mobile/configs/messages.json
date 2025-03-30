@@ -1,0 +1,5 @@
+{
+	"responseNoResourceErr": "Response doesn't contain the resource",
+	"badResponse": "Bad response",
+	"requestResourceNotComplete": "Request resource is not complete"
+}

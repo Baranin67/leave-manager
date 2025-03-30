@@ -1,12 +1,8 @@
-import { Colors } from '@/constants/Colors';
 import { BottomTabBarButtonProps } from '@react-navigation/bottom-tabs';
 import { PlatformPressable } from '@react-navigation/elements';
 import * as Haptics from 'expo-haptics';
-import { useColorScheme } from 'react-native';
 
 export function HapticTab(props: BottomTabBarButtonProps) {
-	// const colorScheme = useColorScheme();
-
 	return (
 		<PlatformPressable
 			{...props}

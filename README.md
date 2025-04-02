@@ -5,15 +5,51 @@ A simple app for an easy leave management among employers and employees.
 
 # Setup
 
-## Step 1: Environment variables
+## Step 1: Installation
 
-1. Create `.env` file in the `client-mobile` directory.
-2. Paste the code below:
-    ```env
-    EXPO_PUBLIC_LOCALE=
-    EXPO_PUBLIC_API_URL=
-    ```
-3. Fill in the variables to your choice (documentation below).
+1. Download the installation script (`install.sh`) from this repository.
+2. Open it in a text editor.
+3. Edit the variables inside the 'Settings' section (documentation below).
+4. Save the file.
+5. Run the script.
+
+### `GIT_REPO`
+
+The URL of the repository to clone.
+
+### `DEST_DIR`
+
+The path to the directory to clone the files.
+
+## Step 2: API server configuration
+
+1. Enter the `api/v1` directory.
+2. Open the `.env` file with a text editor.
+3. Edit the variables (documentation below).
+4. Run the `start-api` command to start the API server.
+
+### `URI`
+
+The database's URI.
+
+### `PORT`
+
+The API server's port.
+
+### `SECRET_ACCESS_TOKEN`
+
+The API server's secret access token.
+
+### `REFRESH_TOKEN`
+
+The API server's refresh token.
+
+## Step 3: Mobile client server configuration
+
+1. Enter the `client-mobile` directory.
+2. Open the `.env` file with a text editor.
+3. Edit the variables (documentation below).
+4. Run the `start-client-mobile` command to start the mobile client.
 
 ### `EXPO_PUBLIC_LOCALE`
 

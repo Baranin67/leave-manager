@@ -70,7 +70,7 @@ TODO...
 
 ## Table of Contents
 
-- [Models](#models)
+- [Resources](#resources)
   - [Role](#role)
   - [LeaveType](#leavetype)
   - [LeaveStatus](#leavestatus)
@@ -102,7 +102,7 @@ TODO...
 
 ---
 
-## Models
+## Resources
 
 ### Role
 - `admin`

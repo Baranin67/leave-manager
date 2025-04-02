@@ -1,6 +1,35 @@
 # Leave manager
 A simple app for an easy leave management among employers and employees.
 
+---
+
+# Setup
+
+## Step 1: Environment variables
+
+1. Create `.env` file in the `client-mobile` directory.
+2. Paste the code below:
+    ```env
+    EXPO_PUBLIC_LOCALE=
+    EXPO_PUBLIC_API_URL=
+    ```
+3. Fill in the variables to your choice (documentation below).
+
+### `EXPO_PUBLIC_LOCALE`
+
+The server locale's name (e.g. 'en-US', 'pt-PT' etc.).
+
+### `EXPO_PUBLIC_API_URL`
+
+The API server's URL (e.g. `https://api.myserver.net:8080`).
+
+> [!NOTE]
+> If the API server is located on the same network as the client's server, use the local IP address of the API server (e.g. `http://10.0.1.11:8080`).
+
+TODO...
+
+---
+
 # API documentation
 
 ## Table of Contents

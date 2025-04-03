@@ -8,6 +8,7 @@ A simple app for an easy leave management among employers and employees.
 ## Step 0: Prerequisites:
 
 - Node.js v18.x.x (install [here](https://nodejs.org/en/download))
+- SDK Platform Tools (install [here](https://developer.android.com/tools/releases/platform-tools#downloads))
 
 ## Step 1: Installation
 

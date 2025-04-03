@@ -1,9 +1,9 @@
-module.exports = {
-    client: "mysql",
-    connection: {
-      host: "localhost",
-      user: "",
-      password: "",
-      database: "",
-    },
-  };
+export default {
+  client: "mysql",
+  connection: {
+    host: "localhost",
+    user: "",
+    password: "",
+    database: "",
+  },
+};

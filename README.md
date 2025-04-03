@@ -23,10 +23,8 @@ The path to the directory to clone the files.
 
 ## Step 2: API server configuration
 
-1. Enter the `api/v1` directory.
-2. Open the `.env` file with a text editor.
-3. Edit the variables (documentation below).
-4. Run the `start-api` command to start the API server.
+1. Edit the `api/v1/.env` file (documentation below).
+2. Run the `start-api` command to start the API server.
 
 ### `URI`
 
@@ -46,23 +44,22 @@ The API server's refresh token.
 
 ## Step 3: Mobile client server configuration
 
-1. Enter the `client-mobile` directory.
-2. Open the `.env` file with a text editor.
-3. Edit the variables (documentation below).
-4. Run the `start-client-mobile` command to start the mobile client.
+1. Edit the `client-mobile/.env` file (documentation below).
+2. Run the `start-client-mobile` command to start the mobile client.
+
+> [!NOTE]
+> This will start a development build. If you want to build the mobile client for production and distribute it on Google Play or App Store, [here's the guide](https://docs.expo.dev/build/setup/).
 
 ### `EXPO_PUBLIC_LOCALE`
 
-The server locale's name (e.g. 'en-US', 'pt-PT' etc.).
+The server locale's name (e.g. `en-US`, `pt-PT` etc.).
 
 ### `EXPO_PUBLIC_API_URL`
 
 The API server's URL (e.g. `https://api.myserver.net:8080`).
 
 > [!NOTE]
-> If the API server is located on the same network as the client's server, use the local IP address of the API server (e.g. `http://10.0.1.11:8080`).
-
-TODO...
+> If the API server is located on the same network as the client server, use the local IP address of the API server (e.g. `http://10.0.1.11:8080`).
 
 ---
 

@@ -5,6 +5,10 @@ A simple app for an easy leave management among employers and employees.
 
 # Setup
 
+## Step 0: Prerequisites:
+
+- Node.js v18.x.x (install [here](https://nodejs.org/en/download))
+
 ## Step 1: Installation
 
 1. Download the installation script (`install.sh`) from this repository.

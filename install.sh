@@ -5,7 +5,8 @@ GIT_REPO=""
 DEST_DIR="/var/www/app"
 DB_CONFIG_FILE="$DEST_DIR/api/v1/config/database-info.js"
 CONFIG_FILE="$DEST_DIR/api/v1/.env"
-SHORTCUT_FILE="/usr/local/bin/start-api"
+API_SHORTCUT_FILE="/usr/local/bin/start-api"
+CLIENT_SHORTCUT_FILE="/usr/local/bin/start-client-mobile"
 echo "Enter DB name:"
 read DB_NAME
 echo "Enter DB Username:"
@@ -26,6 +27,11 @@ sudo apt install -y nodejs npm
 cd $DEST_DIR
 npm install bcrypt cookie-parser cors dotenv express express-validator jsonwebtoken knex mysql qs
 npm install --save-dev nodemon
+
+# Install packages required by client
+echo "Installing packages required by client..."
+cd $DEST_DIR/client-mobile
+npm i
 
 # Install MariaDB
 echo "Installing MariaDB..."
@@ -156,7 +162,7 @@ EOL
 
 echo "Config file saved in $CONFIG_FILE"
 
-# Creating startup file
+# Creating api server startup file
 echo "Creating startup file..."
 cat <<EOL | sudo tee $SHORTCUT_FILE
 #!/bin/bash
@@ -166,6 +172,17 @@ EOL
 
 sudo chmod +x $SHORTCUT_FILE
 echo "You can now start server by writing start-api"
+
+# Creating client server startup file
+echo "Creating startup file..."
+cat <<EOL | sudo tee $CLIENT_SHORTCUT_FILE
+#!/bin/bash
+cd $DEST_DIR/client-mobile
+npx expo start --tunnel
+EOL
+
+sudo chmod +x $CLIENT_SHORTCUT_FILE
+echo "You can now start client server by writing start-client-mobile"
 
 # End
 echo "Install completed"

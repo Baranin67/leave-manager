@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Settings
-GIT_REPO=""
+GIT_REPO="https://github.com/Baranin67/leave-manager.git"
 DEST_DIR="/var/www/app"
 DB_CONFIG_FILE="$DEST_DIR/api/v1/config/database-info.js"
 CONFIG_FILE="$DEST_DIR/api/v1/.env"
@@ -117,6 +117,7 @@ echo "Installing Git..."
 sudo apt install -y git
 
 # Downloading Repository Git
+mkdir $DEST_DIR
 echo "Downloading Repository..."
 sudo git clone $GIT_REPO $DEST_DIR
 
